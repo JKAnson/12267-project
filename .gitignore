@@ -1,0 +1,10 @@
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# VSCode settings
+.vscode/
+
+# WebStorm / JetBrains IDE files
+.idea/
+*.iml
