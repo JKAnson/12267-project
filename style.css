@@ -1,0 +1,114 @@
+body {
+    background: #0d1013;
+    color: #fff;
+    font-family: 'Rubik', sans-serif;
+    padding-top: 70px;
+}
+
+.navbar {
+    background: rgba(20, 24, 29, 0.85);
+    transition: background-color .3s;
+}
+
+.nav-link, .navbar-brand {
+    color: #fff !important;
+    font-weight: 500;
+}
+
+.nav-link:hover {
+    color: #ffcccb !important;
+}
+
+.icon-btn {
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-left: 12px;
+}
+
+.icon-btn:hover {
+    color: #ffd2d2;
+}
+
+.menu-panel {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background: #1a1f26;
+    border-radius: 5px;
+    display: none;
+    min-width: 160px;
+    z-index: 9999;
+    padding: 4px 0;
+}
+
+.menu-panel a, .menu-panel button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 8px 16px;
+    color: #fff;
+    text-decoration: none;
+    width: 100%;
+    background: transparent;
+    border: none;
+}
+
+.menu-panel a:hover, .menu-panel button:hover {
+    background: #2a2f39;
+}
+
+.placeholder-box {
+    border: 2px dashed #555;
+    padding: 50px;
+    text-align: center;
+    color: #aaa;
+    border-radius: 10px;
+    margin-top: 60px;
+    background: rgba(20, 24, 29, 0.5);
+}
+
+/* Mobile Navbar */
+.mobile-navbar {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    #mainNavbar {
+        display: none !important;
+    }
+
+    .mobile-navbar {
+        display: block !important;
+    }
+
+    .offcanvas, .offcanvas-body {
+        background: #121619;
+        color: #fff;
+    }
+
+    .offcanvas-header {
+        background: #121619;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    .offcanvas-title {
+        color: #fff;
+    }
+
+    .offcanvas-body .nav-link {
+        color: #fff;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 12px 0;
+    }
+
+    .lang-toggle button {
+        background: none;
+        border: none;
+        color: #bbb;
+    }
+
+    .offcanvas-body .btn-danger {
+        width: 100%;
+    }
+}
