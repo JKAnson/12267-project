@@ -23,6 +23,7 @@ const langData = {
         labelEmail: "Email",
         labelMessage: "Message",
         sendBtn: "Send Message",
+        animeList: "Anime List",
         // Settings page
         settingsTitle: "Settings",
         profileSettings: "Profile Settings",
@@ -60,6 +61,7 @@ const langData = {
         labelEmail: "อีเมล",
         labelMessage: "ข้อความ",
         sendBtn: "ส่งข้อความ",
+        animeList: "รายการ",
         // Settings page
         settingsTitle: "การตั้งค่า",
         profileSettings: "การตั้งค่าโปรไฟล์",
