@@ -7,6 +7,85 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet"/>
     <link href="style.css" rel="stylesheet"/>
+    <style>
+        body {
+            background-color: #121212;
+            color: #fff;
+        }
+        .overlay { 
+            position: absolute;
+            bottom: 0; 
+            left: 0; 
+            right: 0; 
+            background: rgba(0,0,0,0.7); 
+            color: white; 
+            padding: 5px; 
+            text-align: center; 
+        }
+        .card-options { 
+            position: absolute; 
+            top: 5px; 
+            right: 5px; 
+            z-index: 1;
+        }
+            .carousel-item img {
+             height: 400px; /* Adjust this value */
+             object-fit: cover;
+        }
+      </style>
+      <!-- Copy From History -->
+        <style>
+            body {
+              background-color: #1a1a1a;
+              color: #fff;
+            }
+        
+            .anime-card {
+              position: relative;
+              border-radius: 1rem;
+              overflow: hidden;
+              margin-bottom: 2rem;
+              box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+              transition: transform 0.3s ease, box-shadow 0.3s ease;
+            }
+        
+            .anime-card:hover {
+              transform: translateY(-8px);
+              box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
+            }
+        
+            .anime-image {
+              width: 100%;
+              height: 250px;
+              object-fit: cover;
+              display: block;
+            }
+        
+            .overlay h5 {
+              margin: 0;
+              font-size: 1.25rem;
+            }
+        
+            .overlay p {
+              margin: 0.25rem 0;
+              font-size: 0.9rem;
+              color: #ccc;
+            }
+        
+            .progress-bar-container {
+              position: absolute;
+              bottom: 0;
+              left: 0;
+              height: 6px;
+              width: 100%;
+              background-color: rgba(255, 255, 255, 0.2);
+            }
+        
+            .progress-bar-fill {
+              height: 100%;
+              background-color: #4caf50;
+            }
+        </style>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark py-2 px-3">
@@ -68,13 +147,351 @@
     </div>
   </div>
 </nav>
-<div style="padding-top:70px"></div>
-<div class="container">
-  <div class="placeholder-box">
-    <h2>Home Section (Coming Soon)</h2>
-    <p>This section is reserved for future development.</p>
+
+<!-- Content -->
+<!-- Carousel -->
+<div id="animeCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="https://media-hosting.imagekit.io/bd806c27eb424239/7ec30de854b982b7f76b85ea6fcdd0cd4954c08d.png@720w_405h_1e_1c_90q.webp?Expires=1840008513&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=XSAnQKijxatOZ2gYNvm4ItKj762GoiZoF~yqnYwIgyvR3jgdvccPlVDk4yCRDkFjfolgN9XZbUCrskNDKbF-ddmnQ8Lnlx~5Tw7idkmHK0kLPTPwINI6SrrUKEFLzarKvsfPjP4iGzceiYMCMB01iY~1ORBUOz3WuesH1XJkEOGWv-hG2zG6XsUdVMpsJl8956AVS7xsyI6HWTy~CJ2GO-arttSI08QCKQKcIiQItM6lQX3DOtuMQfZhuH69colrfPKswQ6XcidEasP6~1rKOMLlAgeT9UCqZ6akI76K0m1qzPkttl5Tzyg0GPfJfCOm2zfs1dja4aiFwOCUyWb-hQ__" class="d-block w-100" alt="One Piece">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media-hosting.imagekit.io/007772607282424b/d4e363fca7ae3c34a50559933fdb9c59a72cb251.png720w_405h_1e_1c_90q.webp?Expires=1840350261&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=j7oPsobgqLRkXJrXttVngEF3n-f88uNl1R0wfZDU4BE0jiRrDRxhQvC4aIFIPk4yJpQW0iC8fAnF7mcVjTz-1-q0Y3zjXzwBh0iBIDmoY65ysqSMNg~H5I6SrJvEnYsKzw0ApkQWzMxuIocd5o2noZfSx~Q2CFn3H3covFMjwUWhJoqjW9cNbqxQoHpdw9WeUnQCheJILo14XTJOwpjsHXJyG26kZSnXqRadZrI0kIod4iD7AXmcJS1raxx2kjBnV5tjlFztgZa1NCiUgzd4K7eiq65Wr~1~hoaYgZYVjdLSMcaT3M2Q98Eg-DItV~MAxI1nee9N6w-NDw7evMC71g__" class="d-block w-100" alt="Naruto Movie">
+      </div>
+      <div class="carousel-item">
+        <img src="https://media-hosting.imagekit.io/9b576af0090f4ceb/e5412c90b5e9092abbb9a9495057835268d389b1.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rEDdWWOMI-6wysWtMuDfyzF5dbYhyrJzKzTRJkCSSr1SrahdNTTGA9OR9chQnIww3Hfx0znXJpsneJZfTqMDFf5saYJonxXnSD6hCXIiBi7atpLFqmQqc-BMFhTwAMDT8zWxh3tyywWTGBGd2M1GfRkVrMUDksHATL2-tHryPRP~sN9Mo1fj~PYmU1ahG7GWqOaZcm9sYmowSzYCiav7-NW624Efqbn80wwUmvyp41Mu-J~85QMGD-SCWF0uEqJNQKemGMqtgTSKF58bgIV54SXpP~9R4hrY8EaNqjv0FNJ0I-gFAl6r~Y1RzFZLT8S8gBL75khA2ELlkHn1nbb3pw__" class="d-block w-100" />
+    </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#animeCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#animeCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
   </div>
-</div>
+<!-- End Carousel -->
+
+<!-- Anime List -->
+ <!-- Content -->
+ <div class="container-fluid px-0" style="padding-top: 30px;">
+    <h2 class="mb-4 text-center">Anime List</h2>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 g-4">
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/bd806c27eb424239/7ec30de854b982b7f76b85ea6fcdd0cd4954c08d.png@720w_405h_1e_1c_90q.webp?Expires=1840008513&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=XSAnQKijxatOZ2gYNvm4ItKj762GoiZoF~yqnYwIgyvR3jgdvccPlVDk4yCRDkFjfolgN9XZbUCrskNDKbF-ddmnQ8Lnlx~5Tw7idkmHK0kLPTPwINI6SrrUKEFLzarKvsfPjP4iGzceiYMCMB01iY~1ORBUOz3WuesH1XJkEOGWv-hG2zG6XsUdVMpsJl8956AVS7xsyI6HWTy~CJ2GO-arttSI08QCKQKcIiQItM6lQX3DOtuMQfZhuH69colrfPKswQ6XcidEasP6~1rKOMLlAgeT9UCqZ6akI76K0m1qzPkttl5Tzyg0GPfJfCOm2zfs1dja4aiFwOCUyWb-hQ__" class="anime-image" />
+          <div class="overlay">
+            <h5>One Piece</h5>
+            <p>Watch to episode 1026</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 65%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/007772607282424b/d4e363fca7ae3c34a50559933fdb9c59a72cb251.png720w_405h_1e_1c_90q.webp?Expires=1840350261&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=j7oPsobgqLRkXJrXttVngEF3n-f88uNl1R0wfZDU4BE0jiRrDRxhQvC4aIFIPk4yJpQW0iC8fAnF7mcVjTz-1-q0Y3zjXzwBh0iBIDmoY65ysqSMNg~H5I6SrJvEnYsKzw0ApkQWzMxuIocd5o2noZfSx~Q2CFn3H3covFMjwUWhJoqjW9cNbqxQoHpdw9WeUnQCheJILo14XTJOwpjsHXJyG26kZSnXqRadZrI0kIod4iD7AXmcJS1raxx2kjBnV5tjlFztgZa1NCiUgzd4K7eiq65Wr~1~hoaYgZYVjdLSMcaT3M2Q98Eg-DItV~MAxI1nee9N6w-NDw7evMC71g__" class="anime-image" />
+          <div class="overlay">
+            <h5>The Last: Naruto the Movie</h5>
+            <p>Watch to episode 1</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 95%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/48c8708fd7a140c8/6d71152b5d45b87f4561795ca075a920384de984.png720w_405h_1e_1c_90q.webp?Expires=1840350382&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=LlN3MxIVKxVZUiFKu7TXp2npbQcCdj3KM0DeQj02eScvXMJ9ObUR2toeQZRwBXu5qKrtFJCObPaXejYzoPu0Dz-FPelgnxbP2199K6A4YBOuOgLNlI70yPTLn7EPL2bh1Q8mUhs4Sa59y~xLd7dC3cHdKeJzlFeHeULav6gz763IO25EOavjiLNRxeqU4kxl3rJJMM3XgXkxJHONO88~KxaMCmkMTml-y0t0zlvq3cb-0HeQo3c7Ac87uCDf-lRzzfY3YcNNKp-FpCEkPlCNGK1QDAtIhzUUSmjlcw6WLSIvxtI~cMgPT3FveKdzSZ1SKbyVfSN498930yOr85l81g__" class="anime-image" />
+          <div class="overlay">
+            <h5>My Dress-Up Darling</h5>
+            <p>Watch to episode 11</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 89%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/0a11a01696434b06/893c0c245afab76fd12301071ec7830dfe9cfd6b.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=fYaIM1uWoixQdLnB6WYxLCfoVUT5xjR18eGhUEVUsBto1xHdTEMdb2VcZ1arnA~PbyUAzznWZjY9zItgt7r1JSjT8Z8p3oHs3KUnewKmvvtnQ31vlynshYkOnVPk-jCPhtPXiFBAWpRUTdwesZlrw1AIZ0jTkDe-VIBUmo27b8wQCOqPnZHdMBm3oKf9douEmaTYndMaaLEIjelP-SkBTYWgsD6oE9SiV-JAeqe1By3kjvDzbKN0PRT1foEveOFk0U2~jwJf-Okh8iaYeXoA24eaD-ROwnrxVZ~JA4Kiya9g7S2NK5~fmLPWKHdygSeyKpabsLdyM1YhXfPhJ7eyUA__" class="anime-image" />
+          <div class="overlay">
+            <h5>Hunter X Hunter</h5>
+            <p>Watch to episode 65</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 12%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/524abdeee7f6465e/5abd687cabe4763b6c69b49cae33339adc66d309.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=aJTqW7oeIKME7tfuE3U2NiIEUbtDKCAFDSY1zRw7-6tIV~g~kRgFypU4IAon7QSb0K-QXd0q2ZRyA-xE64uRmC6NP4yYRbjFRULfl-CwLSAVHiMQQ5GBKwO5g1S72Eaw8mAA0Y1rOwdbeoKouqgOspP9Hl-TiL3pYtYedRFdI~Iqgh44z4id2asLbUtEzqoLqZiIMz62FuTIuvlmMu7tyIZX3uI4QtjPSZe8hiqYKfXMoDuYanBSrvff96BvwzTx2UiXB74t6nqH9HbA3ybp9iUmzxx68Onx9~ISJ0b6mEYEYg5WwM42sdet6pzd5U3WM3F~~JLiTfeihRAUOJwVWw__" class="anime-image" />
+          <div class="overlay">
+            <h5>Alya Sometimes Hides Her Feelings</h5>
+            <p>Watch to episode 7</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 90%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/5d55b5b8221d40e5/b1ce2cff8099bcc65aa31985ab3e0db40ebf6f39.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=lcuEjrQni~vTl-jut6ofudMAo4nX2T~gfO6nIuXTI6Av9bq6YnQQ4waEeVo-JIW7OIqcoDgWHkL0CB4fCyku6DF2cQ1uVACvDb6x1hmWDyQzays456jSDnPUfcdN-A4ZQjjo~s1bW75EsKGxpeob2a-w3LEtBlCBg~8CW5pF1r2pL04KRV7KHeigSBkFaDYnDt2cCc9mZwLzdJGjq8m~H4LlwuiGOnbQ9OGPZYIrOu0o3lLk3guGRqqRZI3x5Euwkv~ukEr1X01L4~mi6h1ECn9f5ZL4mK713nNFNCA2yfXQMwIuYoH2sShU8ui0ob1SNsVY7BScQNh8XU4iV6Dmdg__" class="anime-image" />
+          <div class="overlay">
+            <h5>Kaguya-sama: Love Is War</h5>
+            <p>Watch to episode 4</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 45%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/9b576af0090f4ceb/e5412c90b5e9092abbb9a9495057835268d389b1.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=rEDdWWOMI-6wysWtMuDfyzF5dbYhyrJzKzTRJkCSSr1SrahdNTTGA9OR9chQnIww3Hfx0znXJpsneJZfTqMDFf5saYJonxXnSD6hCXIiBi7atpLFqmQqc-BMFhTwAMDT8zWxh3tyywWTGBGd2M1GfRkVrMUDksHATL2-tHryPRP~sN9Mo1fj~PYmU1ahG7GWqOaZcm9sYmowSzYCiav7-NW624Efqbn80wwUmvyp41Mu-J~85QMGD-SCWF0uEqJNQKemGMqtgTSKF58bgIV54SXpP~9R4hrY8EaNqjv0FNJ0I-gFAl6r~Y1RzFZLT8S8gBL75khA2ELlkHn1nbb3pw__" class="anime-image" />
+          <div class="overlay">
+            <h5>Fairy Tail: 100 Years Quest</h5>
+            <p>Watch to episode 29</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 60%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/1fd299f0a3104aa0/92c32f0d68bd32c74ba56158a767a8d27bfff647.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=0m9aUk4ZFf-~QSXKnfEgfxM-GZNzcRzYnqhRsJeR9Plq1CHd6P64kXrG3kBQ9hsqUI5tFfqyU4albWznh4R8pAQPJx9JUBh8GFoK09pX-nHaRu2obrbTqQWRMx6rS8wfBgk8XzxOZ~KLnCNzzVT5lISZOTXjrOnaVoKqLyDpbATNXCO6uIfzAGW84BbQKC-8OMDioxinpju86p9TUnyHZ3vLbTrl~iZMH4pxyJTmNITm82rTOQSersiWXiG7UeMCkmdiyMFTnOOyAUxaTZBANWbNoS3tjkkvlrUwK1CaV~fytcEJa5vj3LWolYt5pMhBuAeyio7ySnrPePEzQ5v0XA__" class="anime-image" />
+          <div class="overlay">
+            <h5>That Time I Got Reincarnated as a Slime</h5>
+            <p>Watch to episode 27</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 5%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/db9df3742d6b4c2b/654fd6c7431cee40b59e5fd13052946d13c7a667.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=XCVPQQ~KHU4r-zYDWlVHeWXxkxdCgZrEIsBfv45MJ6UuLTtucpjuB2RYL6jC5P4li195-e3mv3v4z3UCLJ3SdVLSVOQAMkhr5UHNzt4gLin69K3HWzPKcwWFyD76uUt7h182PwulXbr4gQV57jIZ7HHKdbfAFbnoNqWB8VciLLnS-jp9QFnbEnKdRjWbnf1nPFcUHp-dQNPZ3o7G5MEN2dMTx6lxsluzoUH8KX2CtzJBXfM7lPdo9lGtiOZQGg3D0HxYcP4~Y7ZaaqYH0bB1azwup5foyIwpppTzumQu~~IzCSI1UKJn5KhLBMKaqkWooSrrUJkZ6VZP77QPwV1Zhg__" class="anime-image" />
+          <div class="overlay">
+            <h5>Teasing Master Takagi-san The Movie</h5>
+            <p>Watch to episode 1</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 35%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/ead73d0610194fad/eed810313dee0a7b23ad8c8b8fb31e9b42714223.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=XI1oI-5eooZyX~DsGOfoZZcHgOegzroR-W3JKOBPWZn36BRl1xa4d00q9bvxGfD3Fbw7zZQL4ml-pT3fEFP215ykSqZwZMxZMlVKGVE~bcl28SRMgbDDLL3eECqMw2jR3rKLg5eQ44MaYghTcH7ulZsrj1XyUL7X98VDntDRNuqS8J7m~-56lKLQ66eivbZlqN9p78KNOv13b7LiUeEitKw4Co5hk2xjkzKYQGoFyNMuluEqtvzcvEROOXtD5pQfOEqBfG6nO2BvA~rxsk~OmNijsRRVrHfzkPXa5hv16xOOrpI8Zjt-6SZd4hgCgoXD9Ou9Qd9Ri-h8aY5dtnkjQA__" class="anime-image" />
+          <div class="overlay">
+            <h5>Teasing Master Takagi-san</h5>
+            <p>Watch to episode 12</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 98%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/41e1f90bd37345f4/3744d51f6b6a4c4016069a74eabd8c38be18bf1d.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=pvaM9J2GuOhBK~Mp~nFWLMblduPC~JlCX0HwZaM3A0LaviXthZOMwIKeHUsHR1iN-ioNyDpIJ4ELB6rkIbw49cD43sd~4twEodRCBlVcR431RWg4uYBhD9NCTxXh-S73VtZhXNiPuolncruHhCjZeLTa8L8psS-EpQ7htYbkQ2oMwsw-gebxBf~C1oZDyvyM6OlP7-bLW~ZccSs7bL6kmyUTIPvGVSvl01Omy9W4W~2pf9pOxv~edVxi51iH7xnLb3COu92xdwwC3kvV9~du3cZ-pHBexk-zMyADTB3vknN2LExmZnc1XH5ViaJE-JCwBSxdhkN9DAIRJiheFC9UHQ__" class="anime-image" />
+          <div class="overlay">
+            <h5>Mob Psycho 100</h5>
+            <p>Watch to episode 8</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 72%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/54a9ab8e96a54f5c/2dae2d8135766a6b9028ad5536acb11a76cd6668.jpg720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=qGjrlv4atju0RLjrercBe8ZO3x9anqATuXpm7rJbS5SQH2YM4eCptdBu7Osj3lqdJJnXsE3dF8ooozduKlNV~Tnw2g-8KiYLg~IvgJiTUNR8tWjR9yoCklEZvQ4wvVJ8x8Rm-HDoUpY4LfJ8iGCjRZloWTmn00tNg9~Z3oc9rCbu3Frta5duQ7upfvM1363512zwCAqvZbV~oJfUR0GfZXy9KN1sPPoBQZ5p~ilbiJU2p7G8aUw1SpIHz6OlPlzW~z6pIevBWDI4STeKTGcC1sPcRCcemzdGCrMnhmOFDmt~~dKinZNCDKvc2AsS0b1Le4GzW6m~U1S5Dmu1Qm1hsQ__" class="anime-image" />
+          <div class="overlay">
+            <h5>MASHLE: MAGIC AND MUSCLES</h5>
+            <p>Watch to episode 3</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 46%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/72a8f69a0fd147d0/95c838161d7bcd29c2e695e814e5429c52ff9795.png720w_405h_1e_1c_90q.webp?Expires=1840350491&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=eC9Gu0i~rMuMOzobLpszRFR2-~7F5GImRIk054E7UidXKfrf0aZhxJTe0xiRoVZh6jDrkur5rELPTNleJEvcJ1r1Jtq-31slDHQ0UuJLvMYiRKm3orkhiqA6arXcXqBtcPm-Zij9NF3YlDtX-4s038E3ze-D-EN0sgoU5ibm67t-dKzGSeGPwNb2lGl8hHN9VRn0cRBTmADLNFd1M6cHf~zcaMYtMgbGZymf3VQ7074vfurzuLqLAn2Zijev8y84KfRXfI72aTetMYkTVcCFc4XBLieB87nSWMRC79TBeKz0Ff8BeWvFcjq5WljbkjnM~tQC3hEJ4SOKygcBVnP33Q__" class="anime-image" />
+          <div class="overlay">
+            <h5>Spy x Family</h5>
+            <p>Watch to episode 15</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 68%"></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col">
+        <div class="anime-card">
+          <div class="card-options dropdown">
+            <button class="btn btn-sm btn-dark dropdown-toggle" type="button" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              ⋮
+            </button>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item text-danger" href="#">ลบ</a></li>
+            </ul>
+          </div>
+          <img src="https://media-hosting.imagekit.io/4cfd0384fab54794/5a9e165c729f46500f8c280a1591e5ead1cad825.png720w_405h_1e_1c_90q.webp?Expires=1840350648&Key-Pair-Id=K2ZIVPTIP2VGHC&Signature=ThLcmDI37UAgD18o1hjA8I2TCOPSZHblh9MmSNg-DbGK99iyOyc8t9UQMuZAbtXcw~9zjxAHyvTdU7qW7iAzqb8o0mzMscetLK8sxK~Pq~8EcRqsqV6c53rj7FeA5O-s1rAeXBJSjuFwBkc1R9lOILc6nogh5FXKjihAoug6Un3pckJ~qIbB8lxW8qkAVJNmw3nfu0vpuxOHAOvhn0jPSyN0YoknVi6P4s41m-AzZ8dDc8EKF~dJVXwcEZruEBVrVax0~9u6gAL1tlY6SYEggK7VZLj7i0lLQI6tahUsrnQvoSnWAJ7S~NU9YL2gYBb4RGgTFOVsx76abjT89hIocw__" class="anime-image" />
+          <div class="overlay">
+            <h5>Boruto Naruto Next Generation</h5>
+            <p>Watch to episode 1</p>
+          </div>
+          <div class="progress-bar-container">
+            <div class="progress-bar-fill" style="width: 30%"></div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+<!-- Script -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 <script src="lang.js"></script>
 <script>
